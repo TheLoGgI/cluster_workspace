@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pg-ping
+  namespace: default
+spec:
+  containers:
+  - name: pg-ping
+    image: localhost:5000/gs-ping
+    ports:
+    - containerPort: 8080

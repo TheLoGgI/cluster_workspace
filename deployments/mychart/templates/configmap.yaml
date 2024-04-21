@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  salad: {{ .Values.global.salad }}
+  myvalue: "Hello World"
+  drink: {{ .Values.favorite.drink | default (printf "%s-tea" "sweet") }}
+  food: {{ .Values.favorite.food | upper | quote }}
+  song: {{ .Values.favorite.song | default (printf "Save me" ) }}
+  {{ range $index, $service := (lookup "v1" "Service" "mynamespace" "").items }}
+    {{/* do something with each service */}}
+{{ end }}

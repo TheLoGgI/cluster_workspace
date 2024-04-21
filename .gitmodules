@@ -1,0 +1,3 @@
+[submodule "projects/docker-gs-ping"]
+	path = projects/docker-gs-ping
+	url = https://github.com/olliefr/docker-gs-ping
